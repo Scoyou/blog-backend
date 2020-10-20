@@ -10,7 +10,7 @@ export class BlogService {
     constructor(@InjectModel('Post') private readonly postModel: Model<Post>) {  }
 
     async addPost(createPostDTO: CreatePostDTO): Promise<Post> {
-        const newPost = await this.postModel(CreatePostDTO);
+        const newPost = await new this.postModel(createPostDTO);
         return newPost.save();
     }
 

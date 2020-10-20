@@ -2,6 +2,10 @@ import { Controller, Get, Res, HttpStatus, Param, NotFoundException, Post, Body,
 import { BlogService } from './blog.service';
 import { CreatePostDTO } from './dto/create-post.dto';
 import { ValidateObjectId } from './shared/validate-object-id.pipes';
+import { UseInterceptors } from '@nestjs/common';
+import { SentryInterceptor } from '../sentry.interceptor';
+
+@UseInterceptors(SentryInterceptor)
 
 @Controller('blog')
 export class BlogController {

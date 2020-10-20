@@ -1,7 +1,7 @@
 import { Controller, Get, Res, HttpStatus, Param, NotFoundException, Post, Body, Put, Query, Delete } from '@nestjs/common';
 import { BlogService } from './blog.service';
 import { CreatePostDTO } from './dto/create-post.dto';
-import { ValidateObjectId } from './shared/validate-object-id.pipes';
+import { ValidateObjectId } from './shared/pipes/validate-object-id.pipes';
 import { UseInterceptors } from '@nestjs/common';
 import { SentryInterceptor } from '../sentry.interceptor';
 
